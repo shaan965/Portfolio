@@ -1,0 +1,218 @@
+/* Header
+--------------------------------------------------
+
+Developer
+
+Home
+About
+Qualification
+Services
+Projects
+Contact
+
+/* Hero
+--------------------------------------------------
+
+Hi, I am Safwan,<br>Software Engineer.
+
+Welcome to my digital space, where lines of code come to life.
+I'm a passionate software engineer, dedicated to crafting elegant
+solutions, building seamless user experiences, and embracing the
+ever-evolving world of technology.
+
+3.5
+Years<br>Experience
+
+20+
+Projects<br>Completed
+
+03+
+Companies<br> Worked
+
+
+/* About
+--------------------------------------------------
+
+About Me
+Who am I
+
+I'm a curious and driven SE with a deep love for all things tech
+
+Experienced software engineer with 3 years of proven 
+expertise in crafting innovative solutions backed 
+by data-driven insights. Delivered 24 projects, 
+optimizing performance and enhancing user experiences. 
+
+
+Know More
+
+Technologies I've been working with:
+
+Programming Languages
+
+Python
+C/C++
+Java
+JavaScript ES6
+Dart
+HTML/CSS
+TypeScript
+JSX
+SQL
+NoSQL
+UML
+JSON
+Shell
+
+Frameworks
+
+React/Redux
+NodeJS
+Express
+REST APIs
+Django
+Flask
+Firebase
+Flutter
+Bootstrap
+Material UI,
+Tailwind CSS
+
+Developer Tools
+
+Android Studio
+VS Code
+Git/Github
+Robotium
+Espresso
+Figma
+Wordpress
+Mobirise
+IBM cloud
+SQLite
+Docker
+Kubernetes
+Postman API
+
+Libraries
+
+Pandas
+Pytest
+Numpy
+Pygame
+Matplotlib
+TensorFlow
+Javadocs
+JUnit
+
+/* Qualification
+--------------------------------------------------
+
+Qualification
+Experience & Education
+
+
+- Professional Experience
+
+QA Analyst Intern at Team Carepal || Jr Product Manager at BizArt IT || 
+Software Engineer Intern at Albertaloop
+
+Supporting project technical documentation creation and maintenance.
+Conducting manual quality checks on product features.
+Collaborating with the software development team to test and identify bugs.
+
+Successfully managed B2B sales and leveraged data analytics to drive growth, 
+resulting in increased company service traction and improved sales figures.
+Spearheaded a website revamp and implemented user-centric designs, 
+leading to a significant 72% increase in website traffic and enhanced customer experience.
+Contributed to revenue growth through extensive market research, 
+cross-functional collaboration, and the successful launch of innovative products, achieving a notable 20% increase in revenue.
+
+Designed and implemented software solutions in C++ to enhance the embedded system, 
+achieving an impressive 41% improvement in its overall performance.
+Developed security solutions and graphics user interfaces that received an 
+outstanding 80% adoption rate by clients, demonstrating their effectiveness and user appeal.
+Optimized system performance through rigorous code optimization and effective debugging, 
+resulting in a notable 35% reduction in response time, thus enhancing the system's efficiency and responsiveness.
+
+2023 - Present || 2022 - 2022 || 2021 - 2021
+
+- Education
+
+Bachelors in Computer Science minoring Business
+
+University of Alberta
+2020 - 2024
+
+See my full resume
+Resume
+
+/* Services
+--------------------------------------------------
+
+Services
+What I do
+
+Frontend<br>Development || Backend<br> Development || Product<br> Management
+
+Know More
+
+
+/* Projects
+--------------------------------------------------
+
+Projects
+My recent work
+
+
+Agency Website || Crypto Application || Ecommerce Website
+
+Lorem ipsum dolor sit amet consectetur 
+adipisicing elit. Facere,esse ullam 
+nemo velit voluptatum excepturi.
+
+View Project
+
+
+/* Testimonials
+--------------------------------------------------
+
+Testimonialss
+What my clients say
+
+Lorem ipsum dolor sit amet consectetur. Dignissim
+tincidunt egestas vitae porttitor nulla gravida commodo.
+
+Natasha Smith
+UI/UX Designer at Dribbble
+
+John Clarke
+Web Developer at Facebook
+
+Emily Walker
+Backend Developer at Google
+
+/* Contact 
+--------------------------------------------------
+
+Interested in working together? Let's talk
+
+Lorem ipsum dolor sit amet consectetur adipisicing 
+elit. Distinctio ipsa ut libero, eligendi
+quis ipsum excepturi reprehenderit maxime.
+
+Get in touch
+
+/* Footer
+--------------------------------------------------
+Follow Me
+- Facebook
+- Instagram
+- Twitter
+- Github
+
+Email Me
+mh13@ualberta.ca
+
+Call Me
+780-267-7971

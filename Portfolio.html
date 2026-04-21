@@ -774,7 +774,7 @@
         <a href="#experience" class="">Experience</a>
         <a href="#projects" class="">Projects</a>
         <a href="#contact">Contact</a>
-        <a href="Portfolio/assets/Muhammad_Safwan_Hossain_Resume.pdf" download="" class="nav-resume">Resume ↓</a>
+        <a href="assets/Muhammad_resume.pdf" download="Muhammad_resume.pdf" class="nav-resume">Resume ↓</a>
       </div>
       <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.6">
@@ -804,7 +804,7 @@
         </p>
         <div class="hero-actions">
           <a href="#projects" class="btn-primary">View Projects</a>
-          <a href="Portfolio/assets/Muhammad_Safwan_Hossain_Resume.pdf" download="" class="btn-ghost">Download Resume ↓</a>
+          <a href="assets/Muhammad_resume.pdf" download="Muhammad_resume.pdf" class="btn-ghost">Download Resume ↓</a>
         </div>
         <div class="hero-socials">
           <a href="https://github.com/shaan965" target="_blank" rel="noreferrer">GitHub</a>
@@ -1152,7 +1152,7 @@
       <p class="contact-desc">If you want to talk about agent systems, ML infrastructure, applied NLP, analytics, or full-stack product work, reach out directly.</p>
       <div class="contact-actions">
         <a href="mailto:safwanhossain37@gmail.com" class="btn-primary">Email Me</a>
-        <a href="Portfolio/assets/Muhammad_Safwan_Hossain_Resume.pdf" download="" class="btn-ghost">Download Resume ↓</a>
+        <a href="assets/Muhammad_resume.pdf" download="Muhammad_resume.pdf" class="btn-ghost">Download Resume ↓</a>
       </div>
       <div class="contact-links">
         <a href="https://github.com/shaan965" target="_blank" rel="noreferrer">github.com/shaan965</a>
@@ -1493,6 +1493,7 @@
     navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + current));
   }
   window.addEventListener('scroll', updateNav, { passive: true });
+  updateNav();
 
   // Mobile nav
   const toggle = document.getElementById('nav-toggle');
@@ -1502,85 +1503,16 @@
 
   // Reveal
   function initReveal() {
+    const revealEls = document.querySelectorAll('.reveal:not(.visible)');
+    if (typeof IntersectionObserver === 'undefined') {
+      revealEls.forEach(el => el.classList.add('visible'));
+      return;
+    }
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }});
     }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
-    document.querySelectorAll('.reveal:not(.visible)').forEach(el => obs.observe(el));
+    revealEls.forEach(el => obs.observe(el));
   }
   initReveal();
-
-  // Tweaks
-  const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
-    "accent": "oklch(70% 0.16 212)",
-    "bg": "#080808",
-    "heroWeight": "500"
-  }/*EDITMODE-END*/;
-  let tweaks = { ...TWEAK_DEFAULTS };
-  function applyTweaks() {
-    document.documentElement.style.setProperty('--accent', tweaks.accent);
-    document.documentElement.style.setProperty('--bg', tweaks.bg);
-    document.querySelector('.hero-title').style.fontWeight = tweaks.heroWeight;
-  }
-  applyTweaks();
-
-  let panel = null;
-  function buildPanel() {
-    if (panel) return;
-    panel = document.createElement('div');
-    panel.style.cssText = `position:fixed;bottom:1.5rem;right:1.5rem;z-index:999;background:#111;border:1px solid rgba(255,255,255,0.12);border-radius:12px;padding:1.25rem;min-width:230px;font-family:'DM Mono',monospace;font-size:.75rem;color:#aaa;box-shadow:0 8px 32px rgba(0,0,0,.7)`;
-    panel.innerHTML = `
-      <div style="font-weight:600;color:#eee;margin-bottom:1rem;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase">Tweaks</div>
-      <div style="margin-bottom:.9rem">
-        <div style="color:#666;margin-bottom:.45rem">Accent</div>
-        <div style="display:flex;gap:.35rem;flex-wrap:wrap">
-          ${[['Blue','oklch(70% 0.16 212)'],['Green','oklch(70% 0.14 155)'],['Rose','oklch(68% 0.16 20)'],['Amber','oklch(74% 0.15 75)']].map(([n,v])=>`<button onclick="setA('${v}')" style="padding:.28rem .65rem;border:1px solid rgba(255,255,255,.1);border-radius:4px;background:${v};color:#000;font-size:.65rem;cursor:pointer;font-family:inherit;font-weight:700">${n}</button>`).join('')}
-        </div>
-      </div>
-      <div style="margin-bottom:.9rem">
-        <div style="color:#666;margin-bottom:.45rem">Background</div>
-        <div style="display:flex;gap:.35rem">
-          ${[['Pure','#080808'],['Warm','#0d0b08'],['Cool','#07090d']].map(([n,v])=>`<button onclick="setB('${v}')" style="padding:.28rem .65rem;border:1px solid rgba(255,255,255,.1);border-radius:4px;background:${v};color:#aaa;font-size:.65rem;cursor:pointer;font-family:inherit">${n}</button>`).join('')}
-        </div>
-      </div>
-      <div>
-        <div style="color:#666;margin-bottom:.45rem">Title Weight</div>
-        <div style="display:flex;gap:.35rem">
-          ${[['Light','300'],['Regular','400'],['Medium','500']].map(([n,v])=>`<button onclick="setW('${v}')" style="padding:.28rem .65rem;border:1px solid rgba(255,255,255,.1);border-radius:4px;background:transparent;color:#aaa;font-size:.65rem;cursor:pointer;font-family:inherit">${n}</button>`).join('')}
-        </div>
-      </div>
-    `;
-    document.body.appendChild(panel);
-  }
-  window.setA = v => { tweaks.accent = v; applyTweaks(); window.parent.postMessage({type:'__edit_mode_set_keys',edits:tweaks},'*'); };
-  window.setB = v => { tweaks.bg = v; applyTweaks(); window.parent.postMessage({type:'__edit_mode_set_keys',edits:tweaks},'*'); };
-  window.setW = v => { tweaks.heroWeight = v; applyTweaks(); window.parent.postMessage({type:'__edit_mode_set_keys',edits:tweaks},'*'); };
-
-  window.addEventListener('message', e => {
-    if (e.data?.type === '__activate_edit_mode') { buildPanel(); panel.style.display = 'block'; }
-    if (e.data?.type === '__deactivate_edit_mode' && panel) panel.style.display = 'none';
-  });
-  window.parent.postMessage({type:'__edit_mode_available'},'*');
 </script>
-
-
-<div style="position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 999; background: rgb(17, 17, 17); border: 1px solid rgba(255, 255, 255, 0.12); border-radius: 12px; padding: 1.25rem; min-width: 230px; font-family: &quot;DM Mono&quot;, monospace; font-size: 0.75rem; color: rgb(170, 170, 170); box-shadow: rgba(0, 0, 0, 0.7) 0px 8px 32px; display: block;">
-      <div style="font-weight:600;color:#eee;margin-bottom:1rem;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase">Tweaks</div>
-      <div style="margin-bottom:.9rem">
-        <div style="color:#666;margin-bottom:.45rem">Accent</div>
-        <div style="display:flex;gap:.35rem;flex-wrap:wrap">
-          <button onclick="setA('oklch(70% 0.16 212)')" style="padding:.28rem .65rem;border:1px solid rgba(255,255,255,.1);border-radius:4px;background:oklch(70% 0.16 212);color:#000;font-size:.65rem;cursor:pointer;font-family:inherit;font-weight:700">Blue</button><button onclick="setA('oklch(70% 0.14 155)')" style="padding:.28rem .65rem;border:1px solid rgba(255,255,255,.1);border-radius:4px;background:oklch(70% 0.14 155);color:#000;font-size:.65rem;cursor:pointer;font-family:inherit;font-weight:700">Green</button><button onclick="setA('oklch(68% 0.16 20)')" style="padding:.28rem .65rem;border:1px solid rgba(255,255,255,.1);border-radius:4px;background:oklch(68% 0.16 20);color:#000;font-size:.65rem;cursor:pointer;font-family:inherit;font-weight:700">Rose</button><button onclick="setA('oklch(74% 0.15 75)')" style="padding:.28rem .65rem;border:1px solid rgba(255,255,255,.1);border-radius:4px;background:oklch(74% 0.15 75);color:#000;font-size:.65rem;cursor:pointer;font-family:inherit;font-weight:700">Amber</button>
-        </div>
-      </div>
-      <div style="margin-bottom:.9rem">
-        <div style="color:#666;margin-bottom:.45rem">Background</div>
-        <div style="display:flex;gap:.35rem">
-          <button onclick="setB('#080808')" style="padding:.28rem .65rem;border:1px solid rgba(255,255,255,.1);border-radius:4px;background:#080808;color:#aaa;font-size:.65rem;cursor:pointer;font-family:inherit">Pure</button><button onclick="setB('#0d0b08')" style="padding:.28rem .65rem;border:1px solid rgba(255,255,255,.1);border-radius:4px;background:#0d0b08;color:#aaa;font-size:.65rem;cursor:pointer;font-family:inherit">Warm</button><button onclick="setB('#07090d')" style="padding:.28rem .65rem;border:1px solid rgba(255,255,255,.1);border-radius:4px;background:#07090d;color:#aaa;font-size:.65rem;cursor:pointer;font-family:inherit">Cool</button>
-        </div>
-      </div>
-      <div>
-        <div style="color:#666;margin-bottom:.45rem">Title Weight</div>
-        <div style="display:flex;gap:.35rem">
-          <button onclick="setW('300')" style="padding:.28rem .65rem;border:1px solid rgba(255,255,255,.1);border-radius:4px;background:transparent;color:#aaa;font-size:.65rem;cursor:pointer;font-family:inherit">Light</button><button onclick="setW('400')" style="padding:.28rem .65rem;border:1px solid rgba(255,255,255,.1);border-radius:4px;background:transparent;color:#aaa;font-size:.65rem;cursor:pointer;font-family:inherit">Regular</button><button onclick="setW('500')" style="padding:.28rem .65rem;border:1px solid rgba(255,255,255,.1);border-radius:4px;background:transparent;color:#aaa;font-size:.65rem;cursor:pointer;font-family:inherit">Medium</button>
-        </div>
-      </div>
-    </div></body></html>
+</body></html>
